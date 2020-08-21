@@ -189,6 +189,8 @@ db.getCollection('user').insertOne({
 
 其中登录账号即为：`admin@virapi.com`，默认登录密码为：`123456`。
 
+登录成功后，**请注意重置登录密码**，以保障账号安全。
+
 
 ## 若您觉得VirAPI有帮到您，请赞助一下以示支持哦~
 

@@ -28,6 +28,7 @@ module.exports = app => {
   router.get('/ajax/account', validateUser, controller.console.user.my_account);
   router.delete('/ajax/session', validateUser, controller.console.user.logout);
   router.post('/ajax/user/profile', validateUser, controller.console.user.update);
+  router.put('/ajax/user_pwd', validateUser, controller.console.user.change_pwd);
 
   router.get('/ajax/request_log', validateUser, controller.console.log.request_log);
 

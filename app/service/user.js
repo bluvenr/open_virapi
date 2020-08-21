@@ -142,7 +142,7 @@ class UserService extends Service {
       this.ctx.throw(400, '该邮箱未注册，请重新输入登录');
     }
 
-    // 加密登录密码
+    // 验证登录密码
     const verifyPsw = await this.ctx.compare(password, user.password);
     if (!verifyPsw) {
       this.ctx.throw(400, '登录密码错误，请重新输入');
@@ -202,6 +202,23 @@ class UserService extends Service {
     }
 
     return result;
+  }
+
+  /**
+   * 重置密码
+   * @param {string} uid 用户id
+   * @param {json} doc 要想修改的属性
+   */
+  async updatePwdByUid(uid, doc) {
+    const user_info = await this.ctx.model.User.findOne({ _id: uid }, '_id vir_uid password');
+    if (!user_info) this.ctx.throw(400, '对应账号信息不存在');
+
+    const verifyPsw = await this.ctx.compare(doc.old_password, user_info.password);
+    if (!verifyPsw) {
+      this.ctx.throw(400, '登录密码错误，请重新输入');
+    }
+
+    return await this.ctx.model.User.updateOne({ _id: uid }, { password: await this.ctx.genHash(doc.password) });
   }
 
   /**
