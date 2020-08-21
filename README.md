@@ -165,3 +165,5 @@ exports.imgUri = 'http://{您的图片访问地址}';    // 若您要对图片�
 | <div style="text-align:center;color:#019fe8;">支付宝赞助</div> | <div style="text-align:center;color:#22ab39;">微信赞助</div> |
 | --------- | --------- |
 | <img src="http://raw.githubusercontent.com/bluvenr/open_virapi_front_end/master/src/assets/sponsor/alipay_qr_code.png" alt="支付宝赞助" style="width:160px;"> | <img src="http://raw.githubusercontent.com/bluvenr/open_virapi_front_end/master/src/assets/sponsor/wxpay_qr_code.png" alt="微信赞助" style="width:160px;"> |
+
+欢迎大家通过[Gitter](https://gitter.im/virapi/feedback)与我们沟通和联系。
