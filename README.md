@@ -36,6 +36,8 @@
 
 正式环境运行，请执行：`npm start`；此时若想关闭停止项目，则执行：`npm stop`。由于eggjs框架的机制，请每次修改后端代码后重启该项目`npm restart`。
 
+默认服务端口为`7001`，本地可直接访问`http://127.0.0.1:7001/`进入控制台管理页面。若是部署到线上，可配置nginx或apache进行重定向。
+
 
 ### 项目配置相关介绍
 项目配置文件放在`config/config.default.js`文件中，若是放置服务器正式环境，则建议复制该文件您需要自定义的配置在同目录下命名为`config.local.js`文件中，并设置您要的配置参数。
@@ -178,7 +180,7 @@ db.getCollection('user').insertOne({
     "email" : "admin@virapi.com",
     "password" : "$2a$10$6fam2XUhNqU0nTNixjuoBuCx5aK2R8t.vEndOuVQ6vxVrinWXu9wy",
     "avatar" : "/default_avatar.jpg",
-    "apps_count" : 1,
+    "apps_count" : 0,
     "login_date" : ISODate("2020-08-21T12:35:47.312Z"),
     "status" : 1,
     "created" : ISODate("2020-08-19T15:20:43.192Z"),
@@ -193,6 +195,7 @@ db.getCollection('user').insertOne({
 
 
 ## 若您觉得VirAPI有帮到您，请赞助一下以示支持哦~
+😁请备注`virapi`。
 
 | <div style="text-align:center;color:#019fe8;">支付宝赞助</div> | <div style="text-align:center;color:#22ab39;">微信赞助</div> |
 | --------- | --------- |
