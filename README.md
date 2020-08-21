@@ -1,6 +1,6 @@
 <div style="text-align:center;" align="center">
 
-<img src="http://raw.githubusercontent.com/bluvenr/open_virapi_front_end/master/src/assets/logo.png" alt="VirAPI LOGO" style="width:260px;">
+<img src="https://images.gitee.com/uploads/images/2020/0821/230221_561fc363_863133.png" alt="VirAPI LOGO" style="width:260px;">
 
 <h3>VirAPI——在线虚拟数据云接口平台</h3>
 
@@ -160,10 +160,45 @@ exports.imgUri = 'http://{您的图片访问地址}';    // 若您要对图片�
 ```
 
 
+### Mongo数据库
+为了能登录控制台系统，需要一个初始化的账号信息。在您的mongo所在服务器执行以下命令，创建初始账号：
+
+``` mongo
+// 进入Mongo命令台
+mongo 127.0.0.1:27017/local_virapi_db;  // 请更换您的Mongo访问地址
+
+// 切换到目标数据库
+use local_virapi_db;  // 请更换您的Mongo数据名
+
+// 插入初始账号信息
+db.getCollection('user').insertOne({
+    "nickname" : "admin",
+    "vir_uid" : "vir_admin",
+    "vir_uid_updated" : null,
+    "email" : "admin@virapi.com",
+    "password" : "$2a$10$6fam2XUhNqU0nTNixjuoBuCx5aK2R8t.vEndOuVQ6vxVrinWXu9wy",
+    "avatar" : "/default_avatar.jpg",
+    "apps_count" : 1,
+    "login_date" : ISODate("2020-08-21T12:35:47.312Z"),
+    "status" : 1,
+    "created" : ISODate("2020-08-19T15:20:43.192Z"),
+    "updated" : ISODate("2020-08-21T12:35:47.315Z"),
+    "__v" : 0
+});
+```
+
+其中登录账号即为：`admin@virapi.com`，默认登录密码为：`123456`。
+
+登录成功后，**请注意重置登录密码**，以保障账号安全。
+
+
 ## 若您觉得VirAPI有帮到您，请赞助一下以示支持哦~
 
 | <div style="text-align:center;color:#019fe8;">支付宝赞助</div> | <div style="text-align:center;color:#22ab39;">微信赞助</div> |
 | --------- | --------- |
-| <img src="http://raw.githubusercontent.com/bluvenr/open_virapi_front_end/master/src/assets/sponsor/alipay_qr_code.png" alt="支付宝赞助" style="width:160px;"> | <img src="http://raw.githubusercontent.com/bluvenr/open_virapi_front_end/master/src/assets/sponsor/wxpay_qr_code.png" alt="微信赞助" style="width:160px;"> |
+| <img src="https://images.gitee.com/uploads/images/2020/0821/230258_d7ecb18b_863133.png" alt="支付宝赞助" style="width:160px;"> | <img src="https://images.gitee.com/uploads/images/2020/0821/230314_08ec5aad_863133.png" alt="微信赞助" style="width:160px;"> |
+
+<br/>
+<br/>
 
 欢迎大家通过[Gitter](https://gitter.im/virapi/feedback)与我们沟通和联系。

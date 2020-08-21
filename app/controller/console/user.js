@@ -53,6 +53,22 @@ class UserController extends CommonController {
 
     this.success();
   }
+
+  /**
+   * 重置登录密码
+   */
+  async change_pwd() {
+    const { ctx } = this;
+
+    ctx.validate({
+      old_password: { type: 'string', min: 6, max: 20 },
+      password: { type: 'string', min: 6, max: 20 },
+    }, ctx.request.body);
+
+    await ctx.service.user.updatePwdByUid(this.user.id, ctx.request.body);
+
+    this.success();
+  }
 }
 
 module.exports = UserController;
