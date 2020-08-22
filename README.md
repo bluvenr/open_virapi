@@ -44,7 +44,7 @@
 
 默认`config.default.js`文件内容为：
 
-```
+``` javascript
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
@@ -138,7 +138,7 @@ module.exports = appInfo => {
 
 在您的自定义配置参数文件`config.local.js`中，我们建议您配置以下必要参数：
 
-```
+``` javascript
 'use strict';
 
 // cookie & session 数据加密安全字符串
@@ -165,7 +165,7 @@ exports.imgUri = 'http://{您的图片访问地址}';    // 若您要对图片�
 ### Mongo数据库
 为了能登录控制台系统，需要一个初始化的账号信息。在您的mongo所在服务器执行以下命令，创建初始账号：
 
-``` mongo
+``` json
 // 进入Mongo命令台
 mongo 127.0.0.1:27017/local_virapi_db;  // 请更换您的Mongo访问地址
 
@@ -193,13 +193,15 @@ db.getCollection('user').insertOne({
 
 登录成功后，**请注意重置登录密码**，以保障账号安全。
 
+<br/>
+<br/>
 
 ## 若您觉得VirAPI有帮到您，请赞助一下以示支持哦~
 😁请备注`virapi`。
 
 | <div style="text-align:center;color:#019fe8;">支付宝赞助</div> | <div style="text-align:center;color:#22ab39;">微信赞助</div> |
 | --------- | --------- |
-| <img src="https://images.gitee.com/uploads/images/2020/0821/230258_d7ecb18b_863133.png" alt="支付宝赞助" style="width:160px;"> | <img src="https://images.gitee.com/uploads/images/2020/0821/230314_08ec5aad_863133.png" alt="微信赞助" style="width:160px;"> |
+| <img src="https://images.gitee.com/uploads/images/2020/0821/230258_d7ecb18b_863133.png" alt="支付宝赞助" width="160px"> | <img src="https://images.gitee.com/uploads/images/2020/0821/230314_08ec5aad_863133.png" alt="微信赞助" width="160px"> |
 
 <br/>
 <br/>
