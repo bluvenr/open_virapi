@@ -223,10 +223,10 @@ db.getCollection('user').insertOne({
 
 ## 部分功能页面截图
 
-![新建应用](https://virapi.com/img/hub/20200805204848-8258134dee.png)
+![新建应用](https://images.gitee.com/uploads/images/2020/0827/020542_2a3ddd7c_863133.png)
 <p align="center">新建应用示例截图</p>
 
-![新建接口](https://virapi.com/img/hub/20200806014545-76c222a89f.png)
+![新建接口](https://images.gitee.com/uploads/images/2020/0827/020624_3087b5c5_863133.png)
 <p align="center">新建接口示例截图</p>
 
 ![应用管理](https://images.gitee.com/uploads/images/2020/0827/013613_27aa4825_863133.png)
