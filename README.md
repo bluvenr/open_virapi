@@ -16,7 +16,33 @@
 ·
 [控制台](http://console.virapi.com/?_from=github)
 
+![node-current](https://img.shields.io/badge/node-%3E%3D8.9.0-brightgreen)
+![egg-current](https://img.shields.io/badge/egg-%5E2.15.1-brightgreen)
+![mongo-current](https://img.shields.io/badge/mongo-%3E%3D3.4.1-brightgreen)
+![mockjs-current](https://img.shields.io/badge/mockjs-%5E1.1.0-brightgreen)
+![license-current](https://img.shields.io/badge/license-Apache--2.0-blue)
+
 </div>
+<br/>
+
+## VirAPI简介
+
+VirAPI（Virtual API）—— 在线虚拟数据云接口平台；非侵入式虚拟数据在线请求响应生成接口，支持MockJs语法，请求即可得自定义规则的响应数据；帮助你本地测试或演示项目之用。
+
+通过VirAPI你可以通过远程接口URL访问直接获得自定义的随机虚拟响应数据，若是只想做前端客户端（App、小程序、网页等）的功能演示或业务模拟测试，而又不想耗费时间精力去等待后端接口的开发完成，甚至不想搭建后端服务逻辑，那么VirAPI会是你的好帮手。
+
+**VirAPI的功能特色：**
++ 内嵌Mock语法支持，可快速定义虚拟数据结构
++ 可视化操作，可视即可得，低门槛快速上手
++ 支持多种请求类型（GET、POST、PUT、DELETE）
++ 接口请求权限验证，阻止非法请求虚拟接口
++ 接口项目应用化管理，还原实际开发场景
++ 虚拟接口请求日志数据查看及统计
++ 提供应用接口文档管理，高效管理接口及项目计划
++ 零污染无侵入，而无需在项目代码中引入Mock包
++ 免费开源，可独立部署搭建
++ ......
+
 <br/>
 
 ## VirAPI开源版
@@ -165,7 +191,7 @@ exports.imgUri = 'http://{您的图片访问地址}';    // 若您要对图片�
 ### Mongo数据库
 为了能登录控制台系统，需要一个初始化的账号信息。在您的mongo所在服务器执行以下命令，创建初始账号：
 
-``` json
+```
 // 进入Mongo命令台
 mongo 127.0.0.1:27017/local_virapi_db;  // 请更换您的Mongo访问地址
 
@@ -192,6 +218,18 @@ db.getCollection('user').insertOne({
 其中登录账号即为：`admin@virapi.com`，默认登录密码为：`123456`。
 
 登录成功后，**请注意重置登录密码**，以保障账号安全。
+
+<br/>
+
+## 部分功能页面截图
+
+![新建应用](https://virapi.com/img/hub/20200805204848-8258134dee.png)
+
+![新建接口](https://virapi.com/img/hub/20200806014545-76c222a89f.png)
+
+![应用管理](https://images.gitee.com/uploads/images/2020/0827/013613_27aa4825_863133.png)
+
+![接口管理](https://images.gitee.com/uploads/images/2020/0827/013730_41332d18_863133.png)
 
 <br/>
 <br/>
