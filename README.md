@@ -16,11 +16,11 @@
 ·
 [控制台](http://console.virapi.com/?_from=github)
 
-[![node-current](https://img.shields.io/badge/node-%3E%3D8.9.0-brightgreen)](https://nodejs.org/en/)
-[![egg-current](https://img.shields.io/badge/egg-%5E2.15.1-brightgreen)](https://eggjs.org/zh-cn/intro/quickstart.html)
-[![mongo-current](https://img.shields.io/badge/mongo-%3E%3D3.4.1-brightgreen)](https://www.mongodb.com/try)
-[![mockjs-current](https://img.shields.io/badge/mockjs-%5E1.1.0-brightgreen)](http://mockjs.com/)
-[![license-current](https://img.shields.io/badge/license-Apache--2.0-blue)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![node-current](https://img.shields.io/badge/NodeJs-%3E%3D8.9.0-brightgreen)](https://nodejs.org/en/)
+[![egg-current](https://img.shields.io/badge/EggJs-%5E2.15.1-brightgreen)](https://eggjs.org/zh-cn/intro/quickstart.html)
+[![mongo-current](https://img.shields.io/badge/MongoDB-%3E%3D3.4.1-brightgreen)](https://www.mongodb.com/try)
+[![mockjs-current](https://img.shields.io/badge/MockJs-%5E1.1.0-brightgreen)](http://mockjs.com/)
+[![license-current](https://img.shields.io/badge/License-Apache--2.0-blue)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 </div>
 <br/>
