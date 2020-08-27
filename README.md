@@ -16,7 +16,33 @@
 ·
 [控制台](http://console.virapi.com/?_from=github)
 
+[![node-current](https://img.shields.io/badge/NodeJs-%3E%3D8.9.0-brightgreen)](https://nodejs.org/en/)
+[![egg-current](https://img.shields.io/badge/EggJs-%5E2.15.1-brightgreen)](https://eggjs.org/zh-cn/intro/quickstart.html)
+[![mongo-current](https://img.shields.io/badge/MongoDB-%3E%3D3.4.1-brightgreen)](https://www.mongodb.com/try)
+[![mockjs-current](https://img.shields.io/badge/MockJs-%5E1.1.0-brightgreen)](http://mockjs.com/)
+[![license-current](https://img.shields.io/badge/License-Apache--2.0-blue)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 </div>
+<br/>
+
+## VirAPI简介
+
+VirAPI（Virtual API）—— 在线虚拟数据云接口平台；非侵入式虚拟数据在线请求响应生成接口，支持MockJs语法，请求即可得自定义规则的响应数据；帮助你本地测试或演示项目之用。
+
+通过VirAPI你可以通过远程接口URL访问直接获得自定义的随机虚拟响应数据，若是只想做前端客户端（App、小程序、网页等）的功能演示或业务模拟测试，而又不想耗费时间精力去等待后端接口的开发完成，甚至不想搭建后端服务逻辑，那么VirAPI会是你的好帮手。
+
+**VirAPI的功能特色：**
++ 内嵌Mock语法支持，可快速定义虚拟数据结构
++ 可视化操作，可视即可得，低门槛快速上手
++ 支持多种请求类型（GET、POST、PUT、DELETE）
++ 接口请求权限验证，阻止非法请求虚拟接口
++ 接口项目应用化管理，还原实际开发场景
++ 虚拟接口请求日志数据查看及统计
++ 提供应用接口文档管理，高效管理接口及项目计划
++ 零污染无侵入，而无需在项目代码中引入Mock包
++ 免费开源，可独立部署搭建
++ ......
+
 <br/>
 
 ## VirAPI开源版
@@ -44,7 +70,7 @@
 
 默认`config.default.js`文件内容为：
 
-```
+``` javascript
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
@@ -138,7 +164,7 @@ module.exports = appInfo => {
 
 在您的自定义配置参数文件`config.local.js`中，我们建议您配置以下必要参数：
 
-```
+``` javascript
 'use strict';
 
 // cookie & session 数据加密安全字符串
@@ -165,7 +191,7 @@ exports.imgUri = 'http://{您的图片访问地址}';    // 若您要对图片�
 ### Mongo数据库
 为了能登录控制台系统，需要一个初始化的账号信息。在您的mongo所在服务器执行以下命令，创建初始账号：
 
-``` mongo
+```
 // 进入Mongo命令台
 mongo 127.0.0.1:27017/local_virapi_db;  // 请更换您的Mongo访问地址
 
@@ -193,13 +219,31 @@ db.getCollection('user').insertOne({
 
 登录成功后，**请注意重置登录密码**，以保障账号安全。
 
+<br/>
+
+## 部分功能页面截图
+
+![新建应用](https://images.gitee.com/uploads/images/2020/0827/020542_2a3ddd7c_863133.png)
+<p align="center">新建应用示例截图</p>
+
+![新建接口](https://images.gitee.com/uploads/images/2020/0827/020624_3087b5c5_863133.png)
+<p align="center">新建接口示例截图</p>
+
+![应用管理](https://images.gitee.com/uploads/images/2020/0827/013613_27aa4825_863133.png)
+<p align="center">应用管理示例截图</p>
+
+![接口管理](https://images.gitee.com/uploads/images/2020/0827/013730_41332d18_863133.png)
+<p align="center">接口管理示例截图</p>
+
+<br/>
+<br/>
 
 ## 若您觉得VirAPI有帮到您，请赞助一下以示支持哦~
 😁请备注`virapi`。
 
 | <div style="text-align:center;color:#019fe8;">支付宝赞助</div> | <div style="text-align:center;color:#22ab39;">微信赞助</div> |
 | --------- | --------- |
-| <img src="https://images.gitee.com/uploads/images/2020/0821/230258_d7ecb18b_863133.png" alt="支付宝赞助" style="width:160px;"> | <img src="https://images.gitee.com/uploads/images/2020/0821/230314_08ec5aad_863133.png" alt="微信赞助" style="width:160px;"> |
+| <img src="https://images.gitee.com/uploads/images/2020/0821/230258_d7ecb18b_863133.png" alt="支付宝赞助" width="160px"> | <img src="https://images.gitee.com/uploads/images/2020/0821/230314_08ec5aad_863133.png" alt="微信赞助" width="160px"> |
 
 <br/>
 <br/>
