@@ -66,7 +66,7 @@ VirAPI（Virtual API）—— 在线虚拟数据云接口平台；非侵入式�
 
 
 ### 项目配置相关介绍
-项目配置文件放在`config/config.default.js`文件中，若是放置服务器正式环境，则建议复制该文件您需要自定义的配置在同目录下命名为`config.local.js`文件中，并设置您要的配置参数。
+项目配置文件放在`config/config.default.js`文件中，若是放置服务器正式环境，则建议复制该文件你需要自定义的配置在同目录下命名为`config.local.js`文件中，并设置你要的配置参数。
 
 默认`config.default.js`文件内容为：
 
@@ -162,18 +162,18 @@ module.exports = appInfo => {
 };
 ```
 
-在您的自定义配置参数文件`config.local.js`中，我们建议您配置以下必要参数：
+在你的自定义配置参数文件`config.local.js`中，我们建议你配置以下必要参数：
 
 ``` javascript
 'use strict';
 
 // cookie & session 数据加密安全字符串
-exports.keys = 'xxxxxxxxx';   // 建议您自定义重置该参数，cookie、session等数据加密时会用到该参数
+exports.keys = 'xxxxxxxxx';   // 建议你自定义重置该参数，cookie、session等数据加密时会用到该参数
 
 // MongoDB 相关参数
 exports.mongoose = {
   client: {
-    url: 'mongodb://127.0.0.1:27017/local_virapi_db',   // 您的mongo数据库访问地址
+    url: 'mongodb://127.0.0.1:27017/local_virapi_db',   // 你的mongo数据库访问地址
     options: {
       // useMongoClient: true,
       autoReconnect: true,
@@ -184,19 +184,19 @@ exports.mongoose = {
 };
 
 // 图片资源访问域名
-exports.imgUri = 'http://{您的图片访问地址}';    // 若您要对图片资源独立分配域名可设置该参数
+exports.imgUri = 'http://{你的图片访问地址}';    // 若你要对图片资源独立分配域名可设置该参数
 ```
 
 
 ### Mongo数据库
-为了能登录控制台系统，需要一个初始化的账号信息。在您的mongo所在服务器执行以下命令，创建初始账号：
+为了能登录控制台系统，需要一个初始化的账号信息。在你的mongo所在服务器执行以下命令，创建初始账号：
 
 ```
 // 进入Mongo命令台
-mongo 127.0.0.1:27017/local_virapi_db;  // 请更换您的Mongo访问地址
+mongo 127.0.0.1:27017/local_virapi_db;  // 请更换你的Mongo访问地址
 
 // 切换到目标数据库
-use local_virapi_db;  // 请更换您的Mongo数据名
+use local_virapi_db;  // 请更换你的Mongo数据名
 
 // 插入初始账号信息
 db.getCollection('user').insertOne({
@@ -238,7 +238,7 @@ db.getCollection('user').insertOne({
 <br/>
 <br/>
 
-## 若您觉得VirAPI有帮到您，请赞助一下以示支持哦~
+## 若觉得VirAPI有帮到你，请赞助一下以示支持哦~
 😁请备注`virapi`。
 
 | <div style="text-align:center;color:#019fe8;">支付宝赞助</div> | <div style="text-align:center;color:#22ab39;">微信赞助</div> |
