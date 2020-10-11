@@ -26,8 +26,6 @@ module.exports = () => {
   }
 
   return async function validateUser(ctx, next) {
-    // ctx.session.user_id = '5f3d434b47c1854b545ce64f';   // TODO 测试使用
-
     // 验证Session
     if (!ctx.session.user_id || ctx.session.user_id !== ctx.cookies.get('v_token', { signed: true, encrypt: true })) {
       _responseErr(ctx);

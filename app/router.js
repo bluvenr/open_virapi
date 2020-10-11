@@ -30,6 +30,7 @@ module.exports = app => {
   router.post('/ajax/user/profile', validateUser, controller.console.user.update);
   router.put('/ajax/user_pwd', validateUser, controller.console.user.change_pwd);
 
+  router.get('/ajax/application/export', validateUser, controller.console.common.export);
   router.get('/ajax/request_log', validateUser, controller.console.log.request_log);
 
   router.get('/ajax/statistics', validateUser, controller.console.statistics.index);
