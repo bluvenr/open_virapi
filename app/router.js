@@ -30,7 +30,6 @@ module.exports = app => {
   router.post('/ajax/user/profile', validateUser, controller.console.user.update);
   router.put('/ajax/user_pwd', validateUser, controller.console.user.change_pwd);
 
-  router.get('/ajax/application/export', validateUser, controller.console.common.export);
   router.get('/ajax/request_log', validateUser, controller.console.log.request_log);
 
   router.get('/ajax/statistics', validateUser, controller.console.statistics.index);
@@ -39,6 +38,7 @@ module.exports = app => {
   router.post('/ajax/change_application_key', validateUser, controller.console.application.change_app_key);
   router.post('/ajax/application/copy', validateUser, controller.console.application.copy);
   router.get('/ajax/application/:slug/base_info', validateUser, controller.console.application.base_info);
+  router.get('/ajax/application/export', validateUser, controller.console.application.export);
 
   router.post('/ajax/interface/empty', validateUser, controller.console.interface.empty);
   router.post('/ajax/interface/copy', validateUser, controller.console.interface.copy);
