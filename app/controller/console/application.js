@@ -150,6 +150,18 @@ class ApplicationController extends CommonController {
     await ctx.service.application.copyApp(ctx.request.body.target_app_slug, ctx.request.body.name, ctx.request.body.slug, ctx.request.body.describe, this.user.id);
     this.success();
   }
+
+  /**
+   * 导出应用接口文档
+   */
+  async export() {
+    if (!this.ctx.query.slug) {
+      await this.failed('必要参数缺失');
+      return;
+    }
+
+    await this.ctx.service.application.exportMockdownDoc(this.ctx.query.slug, this.user);
+  }
 }
 
 module.exports = ApplicationController;

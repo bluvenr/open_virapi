@@ -58,7 +58,7 @@ VirAPI（Virtual API）—— 在线虚拟数据云接口平台；非侵入式�
 ### 运行&部署
 搭建好必要环境后，执行`npm install`安装项目所需依赖包。
 
-本地测试运行，则请执行：`npm dev`
+本地测试运行，则请执行：`npm run dev`
 
 正式环境运行，请执行：`npm start`；此时若想关闭停止项目，则执行：`npm stop`。由于eggjs框架的机制，请每次修改后端代码后重启该项目`npm restart`。
 

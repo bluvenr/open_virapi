@@ -392,6 +392,102 @@ class ApplicationService extends Service {
       await this.ctx.model.Interface.insertMany(api_data);
     }
   }
+
+  /**
+   * 导出接口Mockdown文档
+   * @param {String} slug 应用slug
+   * @param {Object} user 用户对象
+   */
+  async exportMockdownDoc(slug, user) {
+    const app_info = await this.ctx.service.application.getInfoByConditions({ slug, uid: user.id });
+    if (!app_info) {
+      this.ctx.throw(400, '应用不存在或已删除');
+    }
+
+    const export_date = this.ctx.helper.moment().format('YYYYMMDDHHmmss');
+    const verify_rule_map = { header: '请求头部Token验证', param: '请求参数Token验证', compatible: '兼容模式' };
+
+    const api_request_uri = this.ctx.header.referer + 'api/';
+    let content = `# [${app_info.name}] 接口文档
+
+导出时间: ${export_date}
+
+
+## 应用基本信息
+
++ slug: ${app_info.slug}
++ 编号: ${app_info.number}
++ 描述: ${app_info.describe}
++ 创建时间: ${app_info.created}
++ 更新时间: ${app_info.updated}
++ 总接口数: ${app_info.api_count}
+
++ 应用API网址: \`${api_request_uri + user.vir_uid}/${app_info.slug}\`
++ APP KEY: \`${app_info.app_key}\`
++ 验证方式: ${verify_rule_map[app_info.verify_rule] || '未知'}
+
++ 请求响应模板结构
+    - 请求成功：
+    \`\`\` json
+    {
+        "${app_info.response_template.code_name}": ${/^\d+$/.test(app_info.response_template.succeed_code_value) ? app_info.response_template.succeed_code_value : '"' + app_info.response_template.succeed_code_value + '"'},
+        "${app_info.response_template.message_name}": "${app_info.response_template.succeed_message_value}",
+        "${app_info.response_template.data_name}": {
+            "id": 1,
+            "name": "virapi"
+        }
+    }
+    \`\`\`
+    - 请求失败：
+    \`\`\` json
+    {
+        "${app_info.response_template.code_name}": ${/^\d+$/.test(app_info.response_template.failed_code_value) ? app_info.response_template.failed_code_value : '"' + app_info.response_template.failed_code_value + '"'},
+        "${app_info.response_template.message_name}": "${app_info.response_template.failed_message_value}"
+    }
+    \`\`\`
+
+------------------------------
+
+## 接口列表`;
+    const api_list = await this.ctx.service.interface.getList(
+      { uid: user.id, app_slug: app_info.slug },
+      [
+        'describe',
+        'method',
+        'name',
+        'response_rules',
+        'type',
+        'uri',
+      ], 0, 0
+    );
+
+    api_list.forEach((o, i) => {
+      content += `
+### ${i + 1}. ${o.name}
+> ${o.describe || '接口无描述'}
+
++ **URL:** \`${api_request_uri + user.vir_uid}/${app_info.slug}/${o.uri}\`
++ **请求方式:** \`${o.method}\`
+`;
+
+      if (o.response_rules) {
+        content += `+ **响应结构(data数据):**
+\`\`\` MockJs
+${JSON.stringify(o.response_rules, null, 4)}
+\`\`\``;
+      } else if (!o.response_rules || o.response_rules.length === 0) {
+        content += '+ **响应结构(data数据):** 该接口无data数据响应';
+      }
+
+      content += `
+
+`;
+    });
+
+    this.ctx.attachment(`${app_info.name}-接口文档${export_date}.md`);
+    this.ctx.set('Content-Type', 'application/octet-stream');
+    this.ctx.body = content;
+  }
 }
 
 module.exports = ApplicationService;
